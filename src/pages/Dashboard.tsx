@@ -32,7 +32,7 @@ function Dashboard() {
             <h5 className='mt-5'>And, This is from tanstack</h5>
             <h1 className='text-3xl font-bold'>Welcome, {user?.name}!</h1>
 
-            <Button className='mt-5' onClick={() => <Link to={"/todo"}/>}></Button>
+            <Link to={'/todo'}><Button className='mt-5 cursor-pointer'>Lets jump into action</Button></Link>
         </div>
     )
 }
