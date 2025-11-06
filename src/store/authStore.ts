@@ -4,6 +4,7 @@ import { persist,type PersistOptions } from 'zustand/middleware';
 type User = {
     name: string;
     email: string;
+    id?: string;
 }
 interface AuthState {
     isAuthenticated: boolean;

@@ -22,6 +22,10 @@ export interface AuthResponse {
     
 }
 
+export async function getCurrentUser(): Promise<AuthResponse> {
+    return api.get("auth/me").json();
+}
+
 export async function loginApi(payload: LoginPayload): Promise<AuthResponse> {
     return api.post("auth/login", { json: payload }).json();
 }

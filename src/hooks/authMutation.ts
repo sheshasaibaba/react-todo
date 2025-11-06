@@ -10,7 +10,7 @@ export function useLoginMutation() {
         mutationFn: (payload: LoginPayload) => loginApi(payload),
         onSuccess: (data:AuthResponse) => {
             const userData = data.data
-            login({ name: userData.name, email: userData.email }, userData.token)
+            login({ name: userData.name, email: userData.email, id: userData.id }, userData.token)
             queryClient.setQueryData(['user', 'current'], userData)
         },
     })
@@ -24,7 +24,7 @@ export function useSignupMutation() {
         mutationFn: (payload: SignupPayload) => signupApi(payload),
         onSuccess: (data:AuthResponse) => {
             const userData = data.data
-            login({ name: userData.name, email: userData.email }, userData.token)
+            login({ name: userData.name, email: userData.email, id: userData.id }, userData.token)
             queryClient.setQueryData(['user', 'current'], userData)
         },
     })

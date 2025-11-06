@@ -7,6 +7,7 @@ import { ProtectedRoute } from "./protectedRoute";
 const Login = lazy(() => import('../pages/auth/LoginPage'));
 const SignUp = lazy(() => import('../pages/auth/SignUpPage'));
 const Dashboard = lazy(() => import('../pages/Dashboard'));
+const TodoPage = lazy(() => import('../pages/todoPage'));
 
 export function RouterConfig() {
     return (
@@ -19,6 +20,10 @@ export function RouterConfig() {
                 <Route path="/dashboard" element={
                     <ProtectedRoute>
                     <Dashboard />
+                    </ProtectedRoute>}/>
+                <Route path="/todo" element={
+                    <ProtectedRoute>
+                    <TodoPage />
                     </ProtectedRoute>}/>
             </Routes>
         </Suspense>
